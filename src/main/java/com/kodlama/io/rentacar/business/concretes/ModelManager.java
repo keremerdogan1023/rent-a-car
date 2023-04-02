@@ -1,11 +1,11 @@
 package com.kodlama.io.rentacar.business.concretes;
 
 import com.kodlama.io.rentacar.business.abstracts.ModelService;
-import com.kodlama.io.rentacar.business.dto.responses.requests.update.UpdateModelRequest;
+import com.kodlama.io.rentacar.business.dto.requests.update.UpdateModelRequest;
 import com.kodlama.io.rentacar.business.dto.responses.create.CreateModelResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetAllModelsResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetModelResponse;
-import com.kodlama.io.rentacar.business.dto.responses.requests.create.CreateModelRequest;
+import com.kodlama.io.rentacar.business.dto.requests.create.CreateModelRequest;
 import com.kodlama.io.rentacar.business.dto.responses.update.UpdateModelResponse;
 import com.kodlama.io.rentacar.entities.Model;
 import com.kodlama.io.rentacar.repository.ModelRepository;

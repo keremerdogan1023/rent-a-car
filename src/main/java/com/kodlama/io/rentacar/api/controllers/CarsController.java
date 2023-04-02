@@ -1,8 +1,8 @@
 package com.kodlama.io.rentacar.api.controllers;
 
 import com.kodlama.io.rentacar.business.abstracts.CarService;
-import com.kodlama.io.rentacar.business.dto.responses.requests.create.CreateCarRequest;
-import com.kodlama.io.rentacar.business.dto.responses.requests.update.UpdateCarRequest;
+import com.kodlama.io.rentacar.business.dto.requests.create.CreateCarRequest;
+import com.kodlama.io.rentacar.business.dto.requests.update.UpdateCarRequest;
 import com.kodlama.io.rentacar.business.dto.responses.create.CreateCarResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetAllCarsResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetCarResponse;

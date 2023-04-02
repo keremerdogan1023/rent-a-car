@@ -1,8 +1,8 @@
 package com.kodlama.io.rentacar.business.concretes;
 
 import com.kodlama.io.rentacar.business.abstracts.CarService;
-import com.kodlama.io.rentacar.business.dto.responses.requests.create.CreateCarRequest;
-import com.kodlama.io.rentacar.business.dto.responses.requests.update.UpdateCarRequest;
+import com.kodlama.io.rentacar.business.dto.requests.create.CreateCarRequest;
+import com.kodlama.io.rentacar.business.dto.requests.update.UpdateCarRequest;
 import com.kodlama.io.rentacar.business.dto.responses.create.CreateCarResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetAllCarsResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetCarResponse;
@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import static com.kodlama.io.rentacar.entities.enums.State.*;
 
 @Service
 @AllArgsConstructor
@@ -54,10 +55,28 @@ public class CarManager implements CarService {
                 .map(car -> mapper.map(car,GetAllCarsResponse.class)).toList();
         return responses;
     }
+    @Override
+    public List<GetAllCarsResponse> getAllByState(Boolean filter) {
+        List<Car> cars = repository.findAll();
+        List<GetAllCarsResponse> responses;
+        if (filter == false)
+        {
+            responses = cars.stream().map(car -> mapper.map(car, GetAllCarsResponse.class)).toList();
+        }
+        else {
+            responses = cars.stream().filter(car -> car.getState().toString() == AVAILABLE.name())
+                    .map(car -> mapper.map(car, GetAllCarsResponse.class)).toList();
+        }
+        return responses;
+    }
 
     @Override
     public void delete(int id) {
         repository.deleteById(id);
 
+    }
+
+    public void checkIfCarExists(int id) {
+        if (!repository.existsById(id)) throw new RuntimeException("Marka bulunamadı");
     }
 }

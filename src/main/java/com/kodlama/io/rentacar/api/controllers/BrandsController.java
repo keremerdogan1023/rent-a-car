@@ -1,8 +1,8 @@
 package com.kodlama.io.rentacar.api.controllers;
 
 import com.kodlama.io.rentacar.business.abstracts.BrandService;
-import com.kodlama.io.rentacar.business.dto.responses.requests.create.CreateBrandRequest;
-import com.kodlama.io.rentacar.business.dto.responses.requests.update.UpdateBrandRequest;
+import com.kodlama.io.rentacar.business.dto.requests.create.CreateBrandRequest;
+import com.kodlama.io.rentacar.business.dto.requests.update.UpdateBrandRequest;
 import com.kodlama.io.rentacar.business.dto.responses.create.CreateBrandResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetAllBrandsResponse;
 import com.kodlama.io.rentacar.business.dto.responses.get.GetBrandResponse;
