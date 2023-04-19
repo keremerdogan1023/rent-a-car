@@ -18,25 +18,30 @@ import java.util.List;
 @RequestMapping("/api/models")
 public class ModelsController {
     private ModelService service;
+
     @GetMapping
-    public List<GetAllModelsResponse> getAll(){
+    public List<GetAllModelsResponse> getAll() {
         return service.getAll();
     }
+
     @GetMapping("/{id}")
-    public GetModelResponse getById(@PathVariable int id){
+    public GetModelResponse getById(@PathVariable int id) {
         return service.getById(id);
     }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CreateModelResponse add(@RequestBody CreateModelRequest request){
+    public CreateModelResponse add(@RequestBody CreateModelRequest request) {
         return service.add(request);
     }
+
     @PutMapping("/{id}")
-    public UpdateModelResponse update(@PathVariable int id, @RequestBody UpdateModelRequest request){
+    public UpdateModelResponse update(@PathVariable int id, @RequestBody UpdateModelRequest request) {
         return service.update(id, request);
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id){
+    public void delete(@PathVariable int id) {
         service.delete(id);
     }
 }

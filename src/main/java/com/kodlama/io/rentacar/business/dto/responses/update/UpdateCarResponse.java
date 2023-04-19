@@ -12,9 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UpdateCarResponse {
     private int id;
+    private int modelId;
     private int modelYear;
     private String plate;
     private double dailyPrice;
     private State state;
-    private int modelId;
+
 }
